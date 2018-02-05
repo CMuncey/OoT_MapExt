@@ -160,7 +160,7 @@ bool ErrorCheck(int argc, char** argv)
 	input.open("ZOOTDEC.z64", ios::binary);
 	if(input.fail())
 	{
-		printf("Error: ZOOTDEC.z64 not found\n");
+		perror("ZOOTDEC.z64");
 		input.close();
 		return(true);
 	}
