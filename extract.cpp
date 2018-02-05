@@ -1,5 +1,6 @@
 #include <iostream>
 #include "endian.h"
+#include <iomanip>
 #include <fstream>
 #include <cstring>
 #include <string>
@@ -33,7 +34,7 @@ int main(int argc, char** argv)
 	//Write scene offsets to txt file
 	name = argv[1], name += ".txt";
 	textfile.open(name);
-	textfile << argv[1] << ":    " << "0" << hex << start << " - " << end << endl;
+	textfile << argv[1] << ":    0x" << setfill('0') << setw(8) << hex << start << " - 0x" << setw(8) << end << endl;
 
 	//Get size, finish filename, make room for data
 	size = end-start;
@@ -80,9 +81,9 @@ int main(int argc, char** argv)
 
 		//Write current map offsets to txt file
 		if(i < 10)
-			textfile << argv[1] << "-" << dec << i << ":  " << "0" << hex << start << " - "  << end << endl;
+			textfile << argv[1] << "-" << dec << i << ":  0x" << setfill('0') << setw(8) << hex << start << " - 0x" << setw(8) << end << endl;
 		else
-			textfile << argv[1] << "-" << dec << i << ": " << "0" << hex << start << " - "  << end << endl;
+			textfile << argv[1] << "-" << dec << i << ": 0x" << setfill('0') << setw(8) << hex << start << " - 0x" << setw(8) << end << endl;
 
 		//Read and write the current map
 		size = end-start;
