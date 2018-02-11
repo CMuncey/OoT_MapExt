@@ -10,7 +10,11 @@ The extractChest program will also provide a list of every chest the extractor f
 
 Compiling (Mac/Linux) [Choose one] : g++ -o Extract [extract.cpp/extractChest.cpp]
 
-Compiling (Windows) : *Shrug*.. I think you can compile it since I included the endian.h (which is normally a linux only thing from what I can tell), but I haven't tried it. I would recommend VSCode if you can figure out how to link a compiler to it. If you do manage that, please share how you did so, I can't figure it out.
+Compiling (Windows) : g++ -o Extract [extract.cpp/extractChest.cpp] -l ws2_32
+
+You'll probably want MinGW for this if you're on Windows. That's what I used anyway.
+
+If you don't know how to compile stuff on Windows (I sure didn't), oput the extractor folder on your desktop to make it easier to find, open up a command prompt (Press Windows, then type CMD), type cd Desktop/extractor (or whatever the extractor folder is called), then type the command above.
 
 ---
 
